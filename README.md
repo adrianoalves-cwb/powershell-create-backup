@@ -41,6 +41,32 @@ may need to be updated for future use, depending on your application structure a
 .\CreateBackup.ps1
 ```
 
+### Command line usage
+
+You can run this script directly from the command line in either PowerShell or Command Prompt.
+
+PowerShell example:
+
+```powershell
+$env:APPLICATIONNAME = "MyApplication"
+$env:SERVICENAME = "MyService"
+$env:APPLICATIONINSTALLATIONDIRECTORY = "C:\Apps\MyApplication"
+$env:BACKUPFOLDERDIRECTORY = "C:\Backups"
+
+.\CreateBackup.ps1
+```
+
+Command Prompt (cmd.exe) example:
+
+```bat
+set APPLICATIONNAME=MyApplication
+set SERVICENAME=MyService
+set APPLICATIONINSTALLATIONDIRECTORY=C:\Apps\MyApplication
+set BACKUPFOLDERDIRECTORY=C:\Backups
+
+powershell -ExecutionPolicy Bypass -File .\CreateBackup.ps1
+```
+
 ### Azure DevOps usage
 
 You can run this script in an Azure DevOps pipeline using a PowerShell task.
